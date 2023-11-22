@@ -1,7 +1,21 @@
 // Answer the following questions:
 
 // Add the plots to your report and explain them (describe what you see)
+Plot 1 shows the steering error and output. There are 4 instances where the error becomes really big and these happened because the vehivle was avoiding a car in front of it and had to change paths. The smaller oscillations in between influences the error curce and requires fine tuning the parameters.
+
+Plot 2 shows continuous oscillation in error throttle which will not provide a smooth riding experience.
+
 // What is the effect of the PID according to the plots, how each part of the PID affects the control command?
+The effect of the PID, according to the plots, were able to adjust the P, I, D parameters to keep the driving experience relatively smooth.
+P is a proportional controller that provides an output proportional to the current error. The P controller compares the set poitn with the refernece point and the resulting error is multiplied with a proportional constant to get the correct output.
+I is an integral controller that helps reduce time to minimize the cte. It integrates the error signal over a certain period of time until the error is down to 0.
+D is a derivative controller to ease the error rate and prevent/reduce overshooting and help improve the stability of the system.
+
 // How would you design a way to automatically tune the PID parameters?
+The twiddle algorithm can be implemented to tune the PID parameters.
+
 // PID controller is a model free controller, i.e. it does not use a model of the car. Could you explain the pros and cons of this type of controller?
+PID controllers are very adaptable as they can be adpated to changes in the system's operatin point or environment. This is because they learn from the system's response to their control inputs. Another pro is its simplicity. They are very simple to program and use and offer very good results.
+A con is its sensitivity ot noise. Model free controllers are very sensitive to system measurement noise because they rely on these measurements to determine the control input.
+
 // (Optional) What would you do to improve the PID controller?
